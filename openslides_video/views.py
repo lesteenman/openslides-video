@@ -2,20 +2,6 @@ from openslides.utils.views import (View, TemplateView, AjaxView)
 from openslides.projector.api import get_active_slide
 from openslides.utils.tornado_webserver import ProjectorSocketHandler
 
-class VideoImportView(TemplateView):
-    """
-    View to import video's as content.
-    """
-    required_permissions = 'agenda.can_manage_agenda'
-    template_name = 'openslides_video/video_import.html'
-
-class VideoListView(TemplateView):
-    """
-    View to import video's as content.
-    """
-    required_permissions = 'agenda.can_manage_agenda'
-    template_name = 'openslides_video/video_list.html'
-
 class VideoControlView(AjaxView):
     def get_ajax_context(self, *args, **kwargs):
         return {
