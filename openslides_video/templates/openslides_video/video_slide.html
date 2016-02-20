@@ -1,0 +1,13 @@
+{% load i18n %}
+{% load static %}
+
+<script type="text/javascript">
+    projector['video_playing'] = false;
+    projector['video_fullscreen'] = false;
+</script>
+<script src="{% static 'js/video_presenter.js' %}" type="text/javascript"></script>
+<link href="{% static 'css/mediafile_projector.css' %}" type="text/css" rel="stylesheet">
+
+<div class="canvas-container">
+    <video id='video' style="width: 100%;" src="{{ video.mediafile.url }}"></video>
+</div>

@@ -1,0 +1,30 @@
+{% extends 'core/widget.html' %}
+
+{% load i18n %}
+{% load tags %}
+
+{% block content %}
+<div class="input-prepend" style="margin-bottom:0;">
+    <a class="btn go-first-page" href="{% url 'play_video' %}"
+        rel="tooltip" data-original-title="{% trans 'Play' %}">
+        <i class="icon-play"></i>
+    </a>
+    <a class="btn pdf-page-ctl"  href="{% url 'pause_video' %}"
+        rel="tooltip" data-original-title="{% trans 'Pause' %}">
+        <i class="icon-pause"></i>
+    </a>
+</div>
+
+<ul style="line-height: 180%">
+{% for video in videos %}
+    <li class="{% if video.is_active_slide %}activeline{% endif %}">
+    <a class="activate_link choose-pdf btn"
+        href="/projector/activate/openslides_video/?pk={{ video.pk }}" title="{% trans 'Show' %}">
+        <i class="icon-facetime-video {% if video.is_active_slide %}icon-white{% endif %}"></i>
+        </a> {{ video }}
+    </li>
+{% empty %}
+<li>{% trans 'No videos available.' %}</li>
+{% endfor %}
+</ul>
+{% endblock%}
