@@ -1,6 +1,9 @@
+from django.http import HttpResponse
+
 from openslides.utils.views import (View, TemplateView, AjaxView)
 from openslides.projector.api import get_active_slide
 from openslides.utils.tornado_webserver import ProjectorSocketHandler
+from openslides.config.api import config
 
 class VideoControlView(AjaxView):
     def get_ajax_context(self, *args, **kwargs):
@@ -10,6 +13,8 @@ class VideoControlView(AjaxView):
         }
 
     def update_video_state(self, active_slide):
+        config['video_playing'] = active_slide['video_playing']
+        config['video_fullscreen'] = active_slide['video_fullscreen']
         ProjectorSocketHandler.send_updates(
             {'calls': {'control_video': [
                 active_slide['video_playing'],

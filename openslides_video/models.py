@@ -12,7 +12,8 @@ class Video(Mediafile):
             'video/MP2T',
             'video/3gpp',
             'video/x-msvideo',
-            'video/x-ms-wmv'
+            'video/x-ms-wmv',
+            'video/x-matroska'
             ]
 
     """
