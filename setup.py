@@ -22,7 +22,7 @@ setup(
     long_description=long_description,
     author='Authors of %s, see AUTHORS' % __verbose_name__,
     author_email='eriksteenman@gmail.com',
-    url='http://steenman.me',
+    url='https://github.com/lesteenman',
     keywords='OpenSlides',
     classifiers=[
         'Development Status :: 1 - Production/Unstable',
@@ -33,7 +33,7 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python :: 2'],
     license='MIT',
-    packages=find_packages(exclude=['tests']),
+    packages=find_packages(),
     include_package_data=True,
     install_requires=install_requires,
     entry_points={'openslides_plugins': '%s = %s' % (__verbose_name__, module_name)})
