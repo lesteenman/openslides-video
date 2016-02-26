@@ -3,13 +3,17 @@ from setuptools import find_packages, setup
 package_name = 'openslides-video'
 module_name = 'openslides_video'
 
+# Duplicated from openslides_video\__init__.py, as importing broke the
+# pip installer.
 __verbose_name__ = 'OpenSlides Video Plugin'
 __description__ = 'This plugin provides a way to add video\'s as content.'
 __version__ = '1.0'
-# module = __import__(module_name)
 
 with open('README.rst') as readme:
     long_description = readme.read()
+
+with open('requirements.txt') as requirements:
+    install_requires = requirements.readlines()
 
 setup(
     name=package_name,
