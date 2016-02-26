@@ -3,17 +3,20 @@ from setuptools import find_packages, setup
 package_name = 'openslides-video'
 module_name = 'openslides_video'
 
-module = __import__(module_name)
+__verbose_name__ = 'OpenSlides Video Plugin'
+__description__ = 'This plugin provides a way to add video\'s as content.'
+__version__ = '1.0'
+# module = __import__(module_name)
 
 with open('README.rst') as readme:
     long_description = readme.read()
 
 setup(
     name=package_name,
-    version=module.__version__,
-    description=module.__verbose_name__,
+    version=__version__,
+    description=__verbose_name__,
     long_description=long_description,
-    author='Authors of %s, see AUTHORS' % module.__verbose_name__,
+    author='Authors of %s, see AUTHORS' % __verbose_name__,
     author_email='eriksteenman@gmail.com',
     url='http://steenman.me',
     keywords='OpenSlides',
@@ -29,4 +32,4 @@ setup(
     packages=find_packages(exclude=['tests']),
     include_package_data=True,
     install_requires=install_requires,
-    entry_points={'openslides_plugins': '%s = %s' % (module.__verbose_name__, module_name)})
+    entry_points={'openslides_plugins': '%s = %s' % (__verbose_name__, module_name)})
