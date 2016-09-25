@@ -2,6 +2,10 @@
 Openslides Video
 ========================================
 
+Note for OpenSlides 2.0
+=======================
+This functionality will be included in the main OpenSlides repository soon (as of 25-09-2016) as core functionality. Therefore, this plugin is not necessary for OpenSlides 2.
+
 Overview
 ========
 This plugin adds support for showing videos through OpenSlides.
